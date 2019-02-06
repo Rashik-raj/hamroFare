@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>form</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'main/css/floating-labels.css' %}">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<form class="form" method="post" action="{% url 'main:demo' %}">
+                    {% csrf_token %}
+                   <div class="form-label-group">
+                    <input type="text" id="cardKey" name="cardKey" class="form-control" placeholder="Card Key" autofocus>
+                    <label for="cardKey">CARD KEY</label>
+                  </div>
+
+
+                  <div class="form-label-group">
+                    <input type="text" id="enterId" name="enterId" class="form-control" placeholder="enterId" autofocus>
+                    <label for="enterId">ENTRY ID</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <input type="text" id="exitId" name="exitId" class="form-control" placeholder="exitId" autofocus>
+                    <label for="exitId">EXIT ID</label>
+                  </div>
+
+                  <div class="form-label-group">
+                    <select name="init" id="accountType" class="form-control">
+                      <option value="Kalimati">Kalimati</option>
+                      <option value="Baneshwor">Baneshwor</option>
+                      <option value="Bhaktapur">Bhaktapur</option>
+                    </select>
+                </div>
+
+                 <div class="form-label-group">
+                    <select name="final"  class="form-control">
+                      <option value="kapan">Kapan</option>
+                      <option value="Kalanki">Kalanki</option>
+                      <option value="Balkumari">Balkumari</option>
+                    </select>
+                </div>
+
+
+
+
+                  <div class="form-label-group">
+                    <input type="number" id="distance" name="distance" class="form-control" placeholder="DISTANCE" autofocus>
+                    <label for="distance">DISTANCE (KM)</label>
+                  </div>
+                  
+                  <input class="btn btn-lg btn-primary btn-block" type="submit" value="Check">
+                </form>
+		</div>
+	</div>
+</body>
+</html>

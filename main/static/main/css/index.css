@@ -1,0 +1,39 @@
+#SignUp
+{
+    display: none;
+}
+#LogIn
+{
+    display: block;
+}
+
+#cardStatus
+{
+    display: none;
+}
+#balanceTopUp
+{
+    display: none;
+}
+#transaction
+{
+    display: block;
+}
+
+#vehicleInfo
+{
+    display: none;
+}
+#userDetail
+{
+    display: block;
+}
+
+#cardRequest
+{
+	display: none;
+}
+#companyDetail
+{
+	display: none;
+}

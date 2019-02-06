@@ -1,0 +1,120 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>HamroFare</title>
+        <link rel="icon" href="{% static 'main/pix/logo.png' %}">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/admin-layout.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/floating-labels.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/index.css' %}">
+    </head>
+    <body>
+        <nav id="header">
+            <div class="logo">
+                <a href="#"><img src="{% static 'main/pix/logo.png' %}" alt="logo" id="logo"></a>
+            </div>
+            <div id="banner">
+                Hamro<font id="bannerTitle">Fare</font>
+            </div>
+            <ul>
+                <a href="{% url 'superadmin:logout' %}"><li>LOGOUT</li></a>
+            </ul>
+        </nav>
+
+    <div class="container-fluid" id="wrapper">
+        <div class="jumbotron" align="center">
+            <div class="alert alert-success"><h1>Your Travel Partner</h1></div>
+            <button class="btn btn-lg btn-outline-secondary" onclick="dispCardRequest()">Card Request</button>
+            <button class="btn btn-lg btn-outline-secondary" onclick="dispUserDetail()">User Detail</button>
+            <button class="btn btn-lg btn-outline-secondary" onclick="dispCompanyDetail()">Company Detail</button>
+            <div id="cardRequest">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div id = "userDetail">
+                <br>
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th>S.N</th>
+                        <th>Company Owner</th>
+                        <th>No. of vehicle</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>{{ user.company_name }}</td>
+                        <td>{{ user.bus_no }}</td>           
+                    </tr>
+                </table>
+            </div> 
+            
+            <div id = "companyDetail">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div> 
+             
+        </div>   
+    </div>
+            <!-- body end-->
+    <div id="goUp">
+            <a href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'smooth');">Up</a>
+    </div>
+        <footer>
+            &copy; 2019 Copyright The Invictus Code
+            <br>
+            theinvictuscode@gmail.com
+            <br>
+            KTM, Nepal
+        </footer>
+     </body>
+</html>
+<!-- scripts -->
+<script src="{% static 'main/js/layout.js' %}"></script>       
+<script type="text/javascript">
+     function dispCardRequest()
+    {
+        cardRequest=document.getElementById('cardRequest');
+        userDetail=document.getElementById('userDetail');
+        companyDetail=document.getElementById('companyDetail');
+
+        cardRequest.style.display = "block";
+        userDetail.style.display = "none";
+        companyDetail.style.display = "none";
+    }
+    function dispUserDetail()
+    {
+        cardRequest=document.getElementById('cardRequest');
+        userDetail=document.getElementById('userDetail');
+        companyDetail=document.getElementById('companyDetail');
+
+        cardRequest.style.display = "none";
+        userDetail.style.display = "block";
+        companyDetail.style.display = "none";
+    }
+    function dispCompanyDetail()
+    {
+        cardRequest=document.getElementById('cardRequest');
+        userDetail=document.getElementById('userDetail');
+        companyDetail=document.getElementById('companyDetail');
+
+        cardRequest.style.display = "none";
+        userDetail.style.display = "none";
+        companyDetail.style.display = "block";        
+    }
+</script>
